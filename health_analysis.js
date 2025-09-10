@@ -62,7 +62,7 @@
           }
         }
 
-    addPatientButton.addEventListener("click", addPatient);
+          addPatientButton.addEventListener("click", addPatient);
     function searchCondition() {
         const input = document.getElementById('conditionInput').value.toLowerCase();
         const resultDiv = document.getElementById('result');
