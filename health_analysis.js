@@ -3,27 +3,24 @@
     const btnSearch = document.getElementById('btnSearch');
     const patients = [];
 
-    function addPatient() {
-        const name = document.getElementById("name").value;
-        const gender  = document.querySelector('input[name="gender"]:checked');
-        const age = document.getElementById("age").value;
-        const condition = document.getElementById("condition").value;
+     function addPatient() {
+          const name = document.getElementById("name").value;
+          const gender = document.querySelector('input[name="gender"]:checked');
+          const age = document.getElementById("age").value;
+          const condition = document.getElementById("condition").value;
 
-        if (name && gender && age && condition) {
-            patients.push({name, gender: gender.value, age, condition})
+          if (name && gender && age && condition) {
+            patients.push({ name, gender: gender.value, age, condition });
             resetForm();
             generateReport();
-
+          }
         }
-    }
-
-    function resetForm() {
-        document.getElementById("name").value = "";
-        document.querySelector('input[name="gender"]:checked').checked = false;
-        document.getElementById("age").value = "";
-        document.getElementById("condition").value = "";
-
-    }
+     function resetForm() {
+          document.getElementById("name").value = "";
+          document.querySelector('input[name="gender"]:checked').checked = false;
+          document.getElementById("age").value = "";
+          document.getElementById("condition").value = "";
+        }
 
     function generateReport() {
           const numPatients = patients.length;
@@ -66,7 +63,6 @@
         }
 
     addPatientButton.addEventListener("click", addPatient);
-
     function searchCondition() {
         const input = document.getElementById('conditionInput').value.toLowerCase();
         const resultDiv = document.getElementById('result');
@@ -97,4 +93,5 @@
             resultDiv.innerHTML = 'An error occurred while fetching data.';
           });
       }
-        btnSearch.addEventListener('click', searchCondition);
+        btnSearch.addEventListener('click', searchCondition);            
+        
